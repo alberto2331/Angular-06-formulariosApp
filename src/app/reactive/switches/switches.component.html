@@ -1,0 +1,81 @@
+
+<h2>Reactivo: Switches</h2>
+<hr>
+<form [formGroup]="miFormulario"
+        (ngSubmit)="guardar()">
+    <!--Radios-->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input 
+                        class="form-check-input" 
+                        type="radio"                         
+                        formControlName="genero"
+                        value='M'
+                        id="radioMasculino">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Masculino
+                </label>
+              </div>
+              <div class="form-check">
+                <input  class="form-check-input" 
+                        type="radio"       
+                        formControlName="genero"
+                        value='F'                        
+                        id="radioFemenino">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Femenino
+                </label>
+              </div>
+        </div>
+    </div>
+        
+    <!--Switch-->
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Notificaciones</label>
+            <div class="col-sm-9">
+                <div class="form-check form-switch mt-2">
+                    <input class="form-check-input" 
+                           type="checkbox" 
+                           role="switch" 
+                           formControlName="notificaciones"
+                           id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Quiero recibir notificaciones</label>
+                  </div>
+            </div>
+        </div>
+    <!--Check-->
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <div class="form-check">
+                    <input class="form-check-input" 
+                           type="checkbox" 
+                           id="flexCheckDefault"
+                           formControlName="terminos"
+                           name="terminos">
+                    <label class="form-check-label" for="flexCheckDefault">Terminos y condiciones</label>
+                </div>
+            </div>
+        </div>
+    <!--Boton-->
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end"
+                    type="submit"> <!---->
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<h5>Valor del formulario</h5>
+<pre>{{miFormulario.value | json}}</pre>
+<h5>Persona</h5>
+<pre>{{persona | json}}</pre>
+<h5>Formulario valido</h5>
+<pre>{{miFormulario.valid | json}}</pre>
+<br>
+<pre>Condiciones:</pre>
+
